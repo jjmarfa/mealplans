@@ -1,0 +1,5 @@
+export const SUBSCRIPTION_STATUS = {
+  ACTIVE: "ACTIVE",
+  PENDING: "PENDING",
+  CANCELLED: "CANCELLED",
+} as const;

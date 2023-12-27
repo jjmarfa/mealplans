@@ -1,0 +1,46 @@
+{
+  "functions": [
+    {
+      "source": ".",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run build",
+        "node \"$RESOURCE_DIR/predeploy.js\""
+      ],
+      "postdeploy": [
+        "node \"$RESOURCE_DIR/postdeploy.js\""
+      ]
+    }
+  ],
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "pubsub": {
+      "port": 8085
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

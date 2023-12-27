@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "social-recipes-af451",
+    "production": "social-recipes-af451"
+  }
+}
